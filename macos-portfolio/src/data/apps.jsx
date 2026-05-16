@@ -1,0 +1,102 @@
+import { FaTerminal, FaFolder, FaSafari, FaEnvelope, FaMusic, FaCamera, FaCog } from 'react-icons/fa';
+import { SiGooglemessages, SiApple } from 'react-icons/si';
+import MacFolderIcon from '../components/icons/MacFolderIcon';
+
+export const apps = [
+  {
+    id: 'finder',
+    title: 'Finder',
+    icon: <SiApple className="text-blue-500 w-full h-full" />,
+    isDock: true,
+    isDesktop: false,
+    isActive: true,
+  },
+  {
+    id: 'safari',
+    title: 'Safari',
+    icon: <FaSafari className="text-blue-400 w-full h-full" />,
+    isDock: true,
+    isDesktop: false,
+    isActive: false,
+  },
+  {
+    id: 'messages',
+    title: 'Messages',
+    icon: <SiGooglemessages className="text-green-500 w-full h-full" />,
+    isDock: true,
+    isDesktop: false,
+    isActive: false,
+  },
+  {
+    id: 'mail',
+    title: 'Mail',
+    icon: <FaEnvelope className="text-blue-300 w-full h-full" />,
+    isDock: true,
+    isDesktop: false,
+    isActive: false,
+  },
+  {
+    id: 'music',
+    title: 'Music',
+    icon: <FaMusic className="text-red-500 w-full h-full" />,
+    isDock: true,
+    isDesktop: false,
+    isActive: false,
+  },
+  {
+    id: 'terminal',
+    title: 'Terminal',
+    icon: <FaTerminal className="text-gray-800 w-full h-full p-1 bg-gray-100 rounded-md" />,
+    isDock: true,
+    isDesktop: false,
+    isActive: false,
+  },
+  {
+    id: 'settings',
+    title: 'System Settings',
+    icon: <FaCog className="text-gray-500 w-full h-full" />,
+    isDock: true,
+    isDesktop: false,
+    isActive: false,
+  },
+  {
+    id: 'about',
+    title: 'About Me',
+    icon: <MacFolderIcon className="w-full h-full drop-shadow-md" />,
+    isDock: false,
+    isDesktop: true,
+    isActive: false,
+  },
+  {
+    id: 'projects',
+    title: 'Projects',
+    icon: <MacFolderIcon className="w-full h-full drop-shadow-md" />,
+    isDock: false,
+    isDesktop: true,
+    isActive: false,
+  },
+  {
+    id: 'skills',
+    title: 'Skills',
+    icon: <MacFolderIcon className="w-full h-full drop-shadow-md" />,
+    isDock: false,
+    isDesktop: true,
+    isActive: false,
+  },
+  {
+    id: 'resume',
+    title: 'Resume',
+    icon: <MacFolderIcon className="w-full h-full drop-shadow-md" />,
+    isDock: false,
+    isDesktop: true,
+    isActive: false,
+  },
+  {
+    id: 'contact',
+    title: 'Contact',
+    icon: <MacFolderIcon className="w-full h-full drop-shadow-md" />,
+    isDock: false,
+    isDesktop: true,
+    isActive: false,
+  }
+];

@@ -1,0 +1,193 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── CSS Variables ─────────────────────────────────────── */
+:root {
+  --macos-bg: #1e1e1e;
+  --macos-surface: rgba(30, 30, 30, 0.85);
+  --macos-border: rgba(255, 255, 255, 0.1);
+  --macos-text: #f5f5f7;
+  --macos-muted: #86868b;
+  --macos-accent: #0a84ff;
+  --macos-red: #ff453a;
+  --macos-yellow: #ffd60a;
+  --macos-green: #30d158;
+  --macos-menubar: rgba(20, 20, 20, 0.75);
+  --macos-dock: rgba(255, 255, 255, 0.12);
+  --macos-window: rgba(28, 28, 30, 0.92);
+
+  --wallpaper-1: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  --wallpaper-2: linear-gradient(135deg, #0a0a0a, #1a1a2e, #16213e, #0f3460);
+  --wallpaper-3: linear-gradient(160deg, #0d1117 0%, #161b22 40%, #0d1117 100%);
+
+  --active-wallpaper: var(--wallpaper-1);
+}
+
+/* ── Base Reset ─────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
+  color: var(--macos-text);
+  background: #000;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  user-select: none;
+}
+
+/* ── Desktop Wallpaper ──────────────────────────────────── */
+.desktop-wallpaper {
+  background: var(--active-wallpaper);
+  position: relative;
+}
+
+.desktop-wallpaper::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(120, 80, 255, 0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(0, 120, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, rgba(0, 200, 150, 0.08) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Subtle noise texture overlay */
+.desktop-wallpaper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Glassmorphism Utilities ────────────────────────────── */
+@layer utilities {
+  .glass {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .glass-dark {
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .glass-menubar {
+    background: rgba(18, 18, 18, 0.72);
+    backdrop-filter: blur(24px) saturate(200%);
+    -webkit-backdrop-filter: blur(24px) saturate(200%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .glass-dock {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(24px) saturate(200%);
+    -webkit-backdrop-filter: blur(24px) saturate(200%);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+  }
+
+  .glass-window {
+    background: rgba(28, 28, 30, 0.88);
+    backdrop-filter: blur(40px) saturate(180%);
+    -webkit-backdrop-filter: blur(40px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .text-macos {
+    color: var(--macos-text);
+  }
+
+  .text-macos-muted {
+    color: var(--macos-muted);
+  }
+
+  .bg-macos-accent {
+    background-color: var(--macos-accent);
+  }
+
+  .no-drag {
+    -webkit-app-region: no-drag;
+  }
+
+  .scrollbar-macos::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .scrollbar-macos::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-macos::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 4px;
+  }
+
+  .scrollbar-macos::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.25);
+  }
+}
+
+/* ── Traffic Light Buttons ──────────────────────────────── */
+.traffic-btn {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.15s ease;
+  flex-shrink: 0;
+}
+
+.traffic-btn:hover {
+  opacity: 0.85;
+}
+
+.traffic-red   { background: var(--macos-red); }
+.traffic-yellow { background: var(--macos-yellow); }
+.traffic-green  { background: var(--macos-green); }
+
+/* ── Animations ─────────────────────────────────────────── */
+@keyframes bootFade {
+  from { opacity: 0; transform: scale(1.03); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.boot-fade {
+  animation: bootFade 0.6s ease forwards;
+}
+
+@keyframes dockBounce {
+  0%, 100% { transform: translateY(0); }
+  30%       { transform: translateY(-14px); }
+  60%       { transform: translateY(-6px); }
+}
+
+.dock-bounce {
+  animation: dockBounce 0.5s ease;
+}
+
+/* ── Selection ──────────────────────────────────────────── */
+::selection {
+  background: rgba(10, 132, 255, 0.35);
+  color: #fff;
+}
