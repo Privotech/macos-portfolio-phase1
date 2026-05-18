@@ -18,7 +18,7 @@ const TypingText = ({ text, onComplete }) => {
         clearInterval(timer);
         if (onCompleteRef.current) onCompleteRef.current();
       }
-    }, 15); // Typing speed
+    }, 15);
     return () => clearInterval(timer);
   }, [text]);
 
@@ -71,7 +71,6 @@ const TerminalApp = () => {
       setIsTyping(true);
       setInput('');
 
-      // Command processing
       let outputText = '';
       switch (command) {
         case 'help':
@@ -115,7 +114,7 @@ const TerminalApp = () => {
       const updated = [...prev];
       const last = updated[updated.length - 1];
       if (last.type === 'animated') {
-        last.type = 'output'; // Convert to static text after animation
+        last.type = 'output';
       }
       return updated;
     });

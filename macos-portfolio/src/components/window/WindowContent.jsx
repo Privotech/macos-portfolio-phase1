@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react';
 
-// Lazy load app components for performance
+
 const AboutApp = React.lazy(() => import('../../apps/AboutApp'));
 const FinderApp = React.lazy(() => import('../../apps/FinderApp'));
 const SafariApp = React.lazy(() => import('../../apps/SafariApp'));
@@ -13,6 +13,7 @@ const ProjectsApp = React.lazy(() => import('../../apps/ProjectsApp'));
 const SkillsApp = React.lazy(() => import('../../apps/SkillsApp'));
 const ResumeApp = React.lazy(() => import('../../apps/ResumeApp'));
 const ContactApp = React.lazy(() => import('../../apps/ContactApp'));
+const VSCodeApp = React.lazy(() => import('../../apps/VSCodeApp'));
 
 const WindowContent = ({ id, title }) => {
   const renderContent = () => {
@@ -27,6 +28,8 @@ const WindowContent = ({ id, title }) => {
         return <TerminalApp />;
       case 'settings':
         return <SettingsApp />;
+      case 'vscode':
+        return <VSCodeApp />;
       case 'messages':
         return <MessagesApp />;
       case 'mail':
@@ -42,11 +45,10 @@ const WindowContent = ({ id, title }) => {
       case 'contact':
         return <ContactApp />;
       default:
-        // Default polished generic app interface
         return (
           <div className="w-full h-full flex flex-col items-center justify-center bg-[#1e1e1e] text-white/80 space-y-4">
             <div className="w-20 h-20 bg-white/5 rounded-2xl flex items-center justify-center border border-white/10 shadow-lg">
-              <span className="text-4xl opacity-50">✦</span>
+              <span className="text-4xl opacity-50"></span>
             </div>
             <h2 className="text-2xl font-semibold tracking-tight">{title}</h2>
             <p className="text-sm text-white/40 max-w-xs text-center">

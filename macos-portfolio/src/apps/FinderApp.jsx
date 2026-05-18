@@ -15,7 +15,7 @@ const FinderApp = () => {
 
   const fileSystem = {
     'About Me': [
-      { name: 'profile.jpg', type: 'image', content: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop', desc: 'Profile Picture' },
+      { name: 'profile.png', type: 'image', content: '/privotech.png', desc: 'Profile Picture' },
       { name: 'bio.txt', type: 'text', content: "Hi! I'm Privotech, a passionate Software Engineer and UI Designer dedicated to building robust and beautiful web experiences.", desc: 'Short Biography' }
     ],
     'Skills': [
@@ -37,7 +37,7 @@ const FinderApp = () => {
 
   const handleSectionClick = (sectionName) => {
     setActiveSection(sectionName);
-    setSelectedFile(null); // Reset selection on directory change
+    setSelectedFile(null); 
   };
 
   const currentFiles = fileSystem[activeSection] || [];
@@ -45,7 +45,7 @@ const FinderApp = () => {
   return (
     <div className="w-full h-full flex bg-[#1e1e1e] text-white overflow-hidden">
       
-      {/* Sidebar */}
+      
       <div className="w-48 bg-white/5 border-r border-white/10 flex flex-col py-2 flex-shrink-0">
         <div className="px-4 py-2 text-xs font-semibold text-white/50 mb-1">Favorites</div>
         {sections.map(section => (
@@ -62,9 +62,9 @@ const FinderApp = () => {
         ))}
       </div>
 
-      {/* Main Content Area */}
+      
       <div className="flex-1 flex flex-col bg-[#1e1e1e]">
-        {/* Finder Toolbar */}
+        
         <div className="h-12 border-b border-white/10 flex items-center px-4 bg-white/5 gap-4">
            <div className="flex text-white/40 gap-3">
              <FaChevronLeft className="cursor-pointer hover:text-white transition-colors" />
@@ -73,10 +73,10 @@ const FinderApp = () => {
            <div className="text-sm font-semibold text-white/80">{activeSection}</div>
         </div>
         
-        {/* Two-pane layout for files and preview */}
+        
         <div className="flex-1 flex overflow-hidden">
           
-          {/* File Grid/List */}
+          
           <div className="flex-1 p-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 content-start overflow-y-auto">
             {currentFiles.map((file, idx) => {
               const isSelected = selectedFile?.name === file.name;
@@ -104,7 +104,7 @@ const FinderApp = () => {
             })}
           </div>
 
-          {/* Preview Pane */}
+          
           {selectedFile && (
             <div className="w-64 bg-white/5 border-l border-white/10 p-6 flex flex-col items-center overflow-y-auto">
               {selectedFile.type === 'image' ? (
@@ -114,10 +114,8 @@ const FinderApp = () => {
                   {selectedFile.type === 'code' ? <FaCode className="text-5xl text-yellow-300" /> : <FaFileAlt className="text-5xl text-white/50" />}
                 </div>
               )}
-              
               <h3 className="text-lg font-bold text-center mb-1 truncate w-full">{selectedFile.name}</h3>
               <p className="text-xs text-white/50 mb-6 text-center">{selectedFile.desc}</p>
-              
               <div className="w-full text-sm text-white/80 bg-black/30 p-4 rounded-lg border border-white/5 whitespace-pre-wrap">
                 {selectedFile.content.length > 200 && selectedFile.type !== 'image' 
                   ? selectedFile.content.substring(0, 200) + '...' 

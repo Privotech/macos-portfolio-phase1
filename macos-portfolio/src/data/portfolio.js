@@ -1,6 +1,4 @@
-/**
- * Portfolio data — edit this to personalize your OS portfolio.
- */
+
 
 export const profile = {
   name: 'Privotech',
@@ -8,7 +6,7 @@ export const profile = {
   bio: 'Passionate software developer building beautiful and functional digital experiences.',
   location: 'Lagos, Nigeria',
   email: 'hello@privotech.dev',
-  avatar: null, // path to avatar image once added
+  avatar: null, 
 }
 
 export const skills = [

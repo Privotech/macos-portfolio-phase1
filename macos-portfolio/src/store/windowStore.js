@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 
 export const useWindowStore = create((set, get) => ({
-  windows: [], // Array of { id, title, isMinimized, isMaximized, zIndex }
+  windows: [], 
   activeWindowId: null,
   highestZIndex: 10,
 
@@ -11,7 +11,7 @@ export const useWindowStore = create((set, get) => ({
     const nextZIndex = highestZIndex + 1;
 
     if (existingWindow) {
-      // If already open, focus it, and un-minimize if it was minimized
+      
       set({
         windows: windows.map((w) =>
           w.id === id ? { ...w, isMinimized: false, zIndex: nextZIndex } : w
@@ -20,7 +20,7 @@ export const useWindowStore = create((set, get) => ({
         highestZIndex: nextZIndex,
       });
     } else {
-      // Open new window
+      
       set({
         windows: [
           ...windows,
@@ -58,7 +58,7 @@ export const useWindowStore = create((set, get) => ({
 
   focusWindow: (id) => {
     const { windows, activeWindowId, highestZIndex } = get();
-    if (activeWindowId === id) return; // Already focused
+    if (activeWindowId === id) return; 
     
     const nextZIndex = highestZIndex + 1;
     set({

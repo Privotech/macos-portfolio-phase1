@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ── CSS Variables ─────────────────────────────────────── */
+
 :root {
   --macos-bg: #1e1e1e;
   --macos-surface: rgba(30, 30, 30, 0.85);
@@ -17,14 +17,14 @@
   --macos-dock: rgba(255, 255, 255, 0.12);
   --macos-window: rgba(28, 28, 30, 0.92);
 
-  --wallpaper-1: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  --wallpaper-1: url('/privotech.png') center/cover no-repeat;
   --wallpaper-2: linear-gradient(135deg, #0a0a0a, #1a1a2e, #16213e, #0f3460);
   --wallpaper-3: linear-gradient(160deg, #0d1117 0%, #161b22 40%, #0d1117 100%);
 
   --active-wallpaper: var(--wallpaper-1);
 }
 
-/* ── Base Reset ─────────────────────────────────────────── */
+
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -46,7 +46,7 @@ body {
   user-select: none;
 }
 
-/* ── Desktop Wallpaper ──────────────────────────────────── */
+
 .desktop-wallpaper {
   background: var(--active-wallpaper);
   position: relative;
@@ -64,7 +64,7 @@ body {
   z-index: 0;
 }
 
-/* Subtle noise texture overlay */
+
 .desktop-wallpaper::after {
   content: '';
   position: absolute;
@@ -75,7 +75,7 @@ body {
   z-index: 0;
 }
 
-/* ── Glassmorphism Utilities ────────────────────────────── */
+
 @layer utilities {
   .glass {
     background: rgba(255, 255, 255, 0.06);
@@ -146,7 +146,7 @@ body {
   }
 }
 
-/* ── Traffic Light Buttons ──────────────────────────────── */
+
 .traffic-btn {
   width: 12px;
   height: 12px;
@@ -166,7 +166,7 @@ body {
 .traffic-yellow { background: var(--macos-yellow); }
 .traffic-green  { background: var(--macos-green); }
 
-/* ── Animations ─────────────────────────────────────────── */
+
 @keyframes bootFade {
   from { opacity: 0; transform: scale(1.03); }
   to   { opacity: 1; transform: scale(1); }
@@ -186,7 +186,7 @@ body {
   animation: dockBounce 0.5s ease;
 }
 
-/* ── Selection ──────────────────────────────────────────── */
+
 ::selection {
   background: rgba(10, 132, 255, 0.35);
   color: #fff;

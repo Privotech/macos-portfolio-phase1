@@ -4,7 +4,6 @@ import { FaInbox, FaPaperPlane, FaTrash, FaPen, FaReply, FaArchive } from 'react
 const MailApp = () => {
   return (
     <div className="w-full h-full flex bg-white dark:bg-[#1e1e1e] text-gray-800 dark:text-gray-200">
-      {/* Sidebar - Mailboxes */}
       <div className="w-48 bg-gray-50 dark:bg-white/5 border-r border-gray-200 dark:border-white/10 flex flex-col p-4 gap-2 flex-shrink-0">
         <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Mailboxes</div>
         <div className="flex items-center gap-3 px-2 py-1.5 bg-blue-500 text-white rounded-md cursor-pointer">
@@ -17,8 +16,6 @@ const MailApp = () => {
           <FaTrash /> <span className="text-sm font-medium">Trash</span>
         </div>
       </div>
-
-      {/* Message List */}
       <div className="w-72 bg-white dark:bg-[#1e1e1e] border-r border-gray-200 dark:border-white/10 flex flex-col flex-shrink-0">
         <div className="p-4 border-b border-gray-200 dark:border-white/10 flex justify-between items-center bg-gray-50 dark:bg-white/5">
           <span className="font-semibold">Inbox</span>
@@ -50,8 +47,6 @@ const MailApp = () => {
           </div>
         </div>
       </div>
-
-      {/* Message Content */}
       <div className="flex-1 flex flex-col bg-white dark:bg-[#1e1e1e]">
         <div className="h-14 border-b border-gray-200 dark:border-white/10 flex items-center justify-end px-6 gap-4 text-gray-500 bg-gray-50 dark:bg-white/5">
           <FaReply className="cursor-pointer hover:text-gray-800 dark:hover:text-white transition-colors" />

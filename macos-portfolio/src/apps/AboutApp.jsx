@@ -4,12 +4,8 @@ const AboutApp = () => {
   return (
     <div className="w-full h-full p-8 overflow-y-auto scrollbar-macos">
       <div className="max-w-3xl mx-auto space-y-8">
-        
-        {/* Profile Header */}
         <div className="flex flex-col md:flex-row items-center md:items-start gap-8 bg-white/5 p-6 rounded-2xl border border-white/10">
-          <div className="w-32 h-32 rounded-full bg-gradient-to-tr from-blue-500 to-purple-500 flex-shrink-0 shadow-lg flex items-center justify-center text-4xl font-bold text-white">
-            P
-          </div>
+          <img src="/privotech.png" alt="Privotech" className="w-32 h-32 rounded-full object-cover shadow-lg border-4 border-white/10" />
           <div className="space-y-4 text-center md:text-left">
             <div>
               <h1 className="text-3xl font-bold text-white tracking-tight">Privotech</h1>
@@ -21,8 +17,6 @@ const AboutApp = () => {
             </p>
           </div>
         </div>
-
-        {/* Info Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div className="bg-white/5 p-5 rounded-2xl border border-white/10">
             <h3 className="text-white/50 text-xs font-semibold uppercase tracking-wider mb-3">Experience</h3>

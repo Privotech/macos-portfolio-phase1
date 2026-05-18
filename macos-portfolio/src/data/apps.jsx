@@ -1,5 +1,6 @@
-import { FaTerminal, FaFolder, FaSafari, FaEnvelope, FaMusic, FaCamera, FaCog } from 'react-icons/fa';
+import { FaTerminal, FaEnvelope, FaMusic, FaCog, FaCompass } from 'react-icons/fa';
 import { SiGooglemessages, SiApple } from 'react-icons/si';
+import { VscCode } from 'react-icons/vsc';
 import MacFolderIcon from '../components/icons/MacFolderIcon';
 
 export const apps = [
@@ -14,7 +15,15 @@ export const apps = [
   {
     id: 'safari',
     title: 'Safari',
-    icon: <FaSafari className="text-blue-400 w-full h-full" />,
+    icon: <FaCompass className="text-blue-400 w-full h-full" />,
+    isDock: true,
+    isDesktop: false,
+    isActive: false,
+  },
+  {
+    id: 'vscode',
+    title: 'VS Code',
+    icon: <VscCode className="text-blue-500 w-full h-full p-0.5" />,
     isDock: true,
     isDesktop: false,
     isActive: false,
@@ -98,5 +107,5 @@ export const apps = [
     isDock: false,
     isDesktop: true,
     isActive: false,
-  }
+  },
 ];

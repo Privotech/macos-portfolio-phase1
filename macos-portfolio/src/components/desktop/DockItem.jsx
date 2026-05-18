@@ -25,12 +25,9 @@ const DockItem = ({ app, mouseX }) => {
       className="relative flex flex-col items-center justify-end cursor-pointer group"
       onClick={() => openWindow(app.id, app.title)}
     >
-      {/* Tooltip */}
       <div className="absolute -top-12 opacity-0 group-hover:opacity-100 transition-opacity bg-gray-800/80 text-white text-xs px-2 py-1 rounded-md whitespace-nowrap pointer-events-none border border-white/10 backdrop-blur-md">
         {app.title}
       </div>
-
-      {/* App Icon */}
       <motion.div
         className="w-full aspect-square bg-white rounded-xl shadow-lg flex items-center justify-center p-1.5 dock-bounce hover:-translate-y-2 transition-transform duration-200"
         whileHover={{ y: -8 }}
@@ -40,8 +37,6 @@ const DockItem = ({ app, mouseX }) => {
           {app.icon}
         </div>
       </motion.div>
-
-      {/* Active Indicator */}
       <div className="h-1.5 mt-1 flex items-center justify-center">
         {(isAppRunning || app.isActive) && <div className="w-1 h-1 bg-white/50 rounded-full" />}
       </div>
