@@ -1,48 +1,47 @@
-import React, { Suspense } from 'react';
+import React, { Suspense } from "react";
 
-
-const AboutApp = React.lazy(() => import('../../apps/AboutApp'));
-const FinderApp = React.lazy(() => import('../../apps/FinderApp'));
-const SafariApp = React.lazy(() => import('../../apps/SafariApp'));
-const TerminalApp = React.lazy(() => import('../../apps/TerminalApp'));
-const SettingsApp = React.lazy(() => import('../../apps/SettingsApp'));
-const MessagesApp = React.lazy(() => import('../../apps/MessagesApp'));
-const MailApp = React.lazy(() => import('../../apps/MailApp'));
-const MusicApp = React.lazy(() => import('../../apps/MusicApp'));
-const ProjectsApp = React.lazy(() => import('../../apps/ProjectsApp'));
-const SkillsApp = React.lazy(() => import('../../apps/SkillsApp'));
-const ResumeApp = React.lazy(() => import('../../apps/ResumeApp'));
-const ContactApp = React.lazy(() => import('../../apps/ContactApp'));
-const VSCodeApp = React.lazy(() => import('../../apps/VSCodeApp'));
+const AboutApp = React.lazy(() => import("../../apps/AboutApp"));
+const FinderApp = React.lazy(() => import("../../apps/FinderApp"));
+const SafariApp = React.lazy(() => import("../../apps/SafariApp"));
+const TerminalApp = React.lazy(() => import("../../apps/TerminalApp"));
+const SettingsApp = React.lazy(() => import("../../apps/SettingsApp"));
+const MessagesApp = React.lazy(() => import("../../apps/MessagesApp"));
+const MailApp = React.lazy(() => import("../../apps/MailApp"));
+const MusicApp = React.lazy(() => import("../../apps/MusicApp"));
+const ProjectsApp = React.lazy(() => import("../../apps/ProjectsApp"));
+const SkillsApp = React.lazy(() => import("../../apps/SkillsApp"));
+const ResumeApp = React.lazy(() => import("../../apps/ResumeApp"));
+const ContactApp = React.lazy(() => import("../../apps/ContactApp"));
+const VSCodeApp = React.lazy(() => import("../../apps/VSCodeApp"));
 
 const WindowContent = ({ id, title }) => {
   const renderContent = () => {
     switch (id) {
-      case 'about':
+      case "about":
         return <AboutApp />;
-      case 'finder':
+      case "finder":
         return <FinderApp />;
-      case 'safari':
+      case "safari":
         return <SafariApp />;
-      case 'terminal':
+      case "terminal":
         return <TerminalApp />;
-      case 'settings':
+      case "settings":
         return <SettingsApp />;
-      case 'vscode':
+      case "vscode":
         return <VSCodeApp />;
-      case 'messages':
+      case "messages":
         return <MessagesApp />;
-      case 'mail':
+      case "mail":
         return <MailApp />;
-      case 'music':
+      case "music":
         return <MusicApp />;
-      case 'projects':
+      case "projects":
         return <ProjectsApp />;
-      case 'skills':
+      case "skills":
         return <SkillsApp />;
-      case 'resume':
+      case "resume":
         return <ResumeApp />;
-      case 'contact':
+      case "contact":
         return <ContactApp />;
       default:
         return (
@@ -61,11 +60,13 @@ const WindowContent = ({ id, title }) => {
 
   return (
     <div className="w-full h-full bg-[#1e1e1e] overflow-hidden">
-      <Suspense fallback={
-        <div className="w-full h-full flex items-center justify-center">
-          <div className="w-6 h-6 border-2 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
-        </div>
-      }>
+      <Suspense
+        fallback={
+          <div className="w-full h-full flex items-center justify-center">
+            <div className="w-6 h-6 border-2 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+          </div>
+        }
+      >
         {renderContent()}
       </Suspense>
     </div>

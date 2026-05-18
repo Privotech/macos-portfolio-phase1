@@ -1,13 +1,13 @@
-import React, { useRef } from 'react';
-import { motion, useTransform, useSpring } from 'framer-motion';
-import { useWindowStore } from '../../store/windowStore';
+import React, { useRef } from "react";
+import { motion, useTransform, useSpring } from "framer-motion";
+import { useWindowStore } from "../../store/windowStore";
 
 const DockItem = ({ app, mouseX }) => {
   const ref = useRef(null);
-  
+
   const openWindow = useWindowStore((state) => state.openWindow);
-  const isAppRunning = useWindowStore((state) => 
-    state.windows.some((w) => w.id === app.id)
+  const isAppRunning = useWindowStore((state) =>
+    state.windows.some((w) => w.id === app.id),
   );
 
   const distance = useTransform(mouseX, (val) => {
@@ -16,7 +16,11 @@ const DockItem = ({ app, mouseX }) => {
   });
 
   const widthSync = useTransform(distance, [-150, 0, 150], [50, 80, 50]);
-  const width = useSpring(widthSync, { mass: 0.1, stiffness: 150, damping: 12 });
+  const width = useSpring(widthSync, {
+    mass: 0.1,
+    stiffness: 150,
+    damping: 12,
+  });
 
   return (
     <motion.div
@@ -28,6 +32,7 @@ const DockItem = ({ app, mouseX }) => {
       <div className="absolute -top-12 opacity-0 group-hover:opacity-100 transition-opacity bg-gray-800/80 text-white text-xs px-2 py-1 rounded-md whitespace-nowrap pointer-events-none border border-white/10 backdrop-blur-md">
         {app.title}
       </div>
+
       <motion.div
         className="w-full aspect-square bg-white rounded-xl shadow-lg flex items-center justify-center p-1.5 dock-bounce hover:-translate-y-2 transition-transform duration-200"
         whileHover={{ y: -8 }}
@@ -37,8 +42,11 @@ const DockItem = ({ app, mouseX }) => {
           {app.icon}
         </div>
       </motion.div>
+
       <div className="h-1.5 mt-1 flex items-center justify-center">
-        {(isAppRunning || app.isActive) && <div className="w-1 h-1 bg-white/50 rounded-full" />}
+        {(isAppRunning || app.isActive) && (
+          <div className="w-1 h-1 bg-white/50 rounded-full" />
+        )}
       </div>
     </motion.div>
   );
