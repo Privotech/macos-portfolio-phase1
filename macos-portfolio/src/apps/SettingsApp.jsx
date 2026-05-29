@@ -109,7 +109,7 @@ const SettingsApp = () => {
           </div>
         </div>
 
-        <div className="flex-1 overflow-y-auto p-2 space-y-4">
+        <div className="flex-1 p-2 space-y-4">
           {sidebarGroups.map((group, gIdx) => (
             <div key={gIdx} className="space-y-1">
               {group.items.map((item) => (
@@ -138,7 +138,7 @@ const SettingsApp = () => {
       </div>
 
       <div
-        className={`flex-1 overflow-y-auto p-8 transition-colors ${theme === "dark" ? "bg-transparent" : "bg-[#f5f5f7]"}`}
+        className={`flex-1 p-8 transition-colors ${theme === "dark" ? "bg-transparent" : "bg-[#f5f5f7]"}`}
       >
         <h1 className="text-2xl font-bold mb-6">{activeTab}</h1>
 

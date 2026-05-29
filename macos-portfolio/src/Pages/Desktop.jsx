@@ -18,7 +18,7 @@ const Desktop = () => {
 
   return (
     <div
-      className="w-full h-full relative overflow-hidden flex flex-col transition-all duration-700 ease-in-out"
+      // className="w-full h-full relative overflow-hidden flex flex-col transition-all duration-700 ease-in-out"
       style={{ background: `var(--${wallpaper})` }}
     >
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_20%_50%,rgba(120,80,255,0.15)_0%,transparent_50%),radial-gradient(ellipse_at_80%_20%,rgba(0,120,255,0.1)_0%,transparent_50%),radial-gradient(ellipse_at_50%_80%,rgba(0,200,150,0.08)_0%,transparent_50%)] pointer-events-none z-0"></div>

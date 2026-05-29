@@ -3,7 +3,7 @@ import { FaEnvelope, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 const ContactApp = () => {
   return (
-    <div className="w-full h-full bg-[#1e1e1e] p-8 overflow-y-auto flex items-center justify-center">
+    <div className="w-full h-full bg-[#1e1e1e] p-8 flex items-center justify-center">
       <div className="w-full max-w-4xl bg-white/5 border border-white/10 rounded-3xl p-8 flex flex-col md:flex-row gap-12 shadow-2xl">
         <div className="flex-1 space-y-8">
           <div>

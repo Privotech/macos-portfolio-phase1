@@ -184,7 +184,7 @@ const MusicApp = () => {
       </div>
 
       <div className="flex-1 flex overflow-hidden">
-        <div className="w-56 bg-white/5 border-r border-white/10 p-4 flex flex-col gap-1 overflow-y-auto flex-shrink-0 hidden md:flex">
+        <div className="w-56 bg-white/5 border-r border-white/10 p-4 flex flex-col gap-1 flex-shrink-0 hidden md:flex">
           <div className="text-xs font-semibold text-white/40 mb-2 uppercase tracking-wider">
             Library
           </div>
@@ -206,7 +206,7 @@ const MusicApp = () => {
           </div>
         </div>
 
-        <div className="flex-1 p-6 overflow-y-auto">
+        <div className="flex-1 p-6">
           <h1 className="text-3xl font-bold mb-6">Songs</h1>
 
           <div className="w-full text-left">

@@ -89,7 +89,7 @@ const SafariApp = () => {
         </div>
       </div>
 
-      <div className="flex-1 overflow-y-auto bg-gray-50 flex flex-col items-center">
+      <div className="flex-1 bg-gray-50 flex flex-col items-center">
         <div
           key={activeTab}
           className="w-full max-w-4xl p-8 animate-[fadeIn_0.4s_ease-out]"

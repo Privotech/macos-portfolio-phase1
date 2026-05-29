@@ -1,14 +1,16 @@
-import React from 'react';
-import { AnimatePresence } from 'framer-motion';
-import { useWindowStore } from '../../store/windowStore';
-import Window from './Window';
+import React from "react";
+import { AnimatePresence } from "framer-motion";
+import { useWindowStore } from "../../store/windowStore";
+import Window from "./Window";
 
 const WindowContainer = () => {
   const windows = useWindowStore((state) => state.windows);
 
   return (
-    <div className="absolute inset-0 pointer-events-none z-40 overflow-hidden" style={{ top: '28px', bottom: '70px' }}>
-      
+    <div
+      className="absolute inset-0 pointer-events-none overflow-hidden"
+      style={{ top: "28px", bottom: "70px", zIndex: 0 }}
+    >
       <div className="relative w-full h-full pointer-events-none">
         <AnimatePresence>
           {windows.map((window) => (

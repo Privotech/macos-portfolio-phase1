@@ -8,7 +8,7 @@ const MessagesApp = () => {
         <div className="p-4 border-b border-white/10 font-semibold text-center bg-white/5">
           Messages
         </div>
-        <div className="flex-1 overflow-y-auto">
+        <div className="flex-1">
           <div className="flex items-center gap-3 p-3 hover:bg-white/10 cursor-pointer bg-blue-500/20 border-l-4 border-blue-500">
             <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-blue-400 to-indigo-500 flex items-center justify-center font-bold text-white shadow-md">
               R
@@ -48,7 +48,7 @@ const MessagesApp = () => {
           <div className="text-xs text-blue-400">iMessage</div>
         </div>
 
-        <div className="flex-1 p-6 overflow-y-auto flex flex-col gap-4">
+        <div className="flex-1 p-6 flex flex-col gap-4">
           <div className="text-center text-xs text-white/40 mb-4">
             Today 10:30 AM
           </div>

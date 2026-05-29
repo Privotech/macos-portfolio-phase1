@@ -27,7 +27,7 @@ const ResumeApp = () => {
         </div>
       </div>
 
-      <div className="flex-1 overflow-y-auto p-8 flex justify-center">
+      <div className="flex-1 p-8 flex justify-center">
         <div className="bg-white w-full max-w-[800px] min-h-[1131px] shadow-2xl text-black p-12 select-text">
           <header className="border-b-2 border-gray-800 pb-6 mb-6">
             <h1 className="text-4xl font-bold uppercase tracking-widest text-gray-900 mb-2">

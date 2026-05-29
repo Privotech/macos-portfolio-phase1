@@ -142,7 +142,7 @@ const FinderApp = () => {
         </div>
 
         <div className="flex-1 flex overflow-hidden">
-          <div className="flex-1 p-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 content-start overflow-y-auto">
+          <div className="flex-1 p-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 content-start">
             {currentFiles.map((file, idx) => {
               const isSelected = selectedFile?.name === file.name;
               return (
@@ -179,7 +179,7 @@ const FinderApp = () => {
           </div>
 
           {selectedFile && (
-            <div className="w-64 bg-white/5 border-l border-white/10 p-6 flex flex-col items-center overflow-y-auto">
+            <div className="w-64 bg-white/5 border-l border-white/10 p-6 flex flex-col items-center">
               {selectedFile.type === "image" ? (
                 <img
                   src={selectedFile.content}

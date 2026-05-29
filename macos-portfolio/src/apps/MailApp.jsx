@@ -32,7 +32,7 @@ const MailApp = () => {
           <span className="font-semibold">Inbox</span>
           <FaPen className="text-blue-500 cursor-pointer" />
         </div>
-        <div className="flex-1 overflow-y-auto">
+        <div className="flex-1">
           <div className="p-4 border-b border-gray-200 dark:border-white/10 bg-blue-50 dark:bg-blue-900/20 cursor-pointer relative">
             <div className="absolute left-2 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-blue-500"></div>
             <div className="ml-2">
@@ -71,7 +71,7 @@ const MailApp = () => {
           <FaArchive className="cursor-pointer hover:text-gray-800 dark:hover:text-white transition-colors" />
           <FaTrash className="cursor-pointer hover:text-red-500 transition-colors" />
         </div>
-        <div className="flex-1 p-8 overflow-y-auto">
+        <div className="flex-1 p-8">
           <h1 className="text-2xl font-bold mb-4">
             Dependabot alert: moderate severity
           </h1>

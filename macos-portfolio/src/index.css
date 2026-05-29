@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 :root {
   --macos-bg: #1e1e1e;
   --macos-surface: rgba(30, 30, 30, 0.85);
@@ -17,28 +16,31 @@
   --macos-dock: rgba(255, 255, 255, 0.12);
   --macos-window: rgba(28, 28, 30, 0.92);
 
-  --wallpaper-1: url('/privotech.png') center/cover no-repeat;
   --wallpaper-2: linear-gradient(135deg, #0a0a0a, #1a1a2e, #16213e, #0f3460);
   --wallpaper-3: linear-gradient(160deg, #0d1117 0%, #161b22 40%, #0d1117 100%);
 
-  --active-wallpaper: var(--wallpaper-1);
+  --active-wallpaper: var(--wallpaper-2);
 }
 
-
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-html, body, #root {
+html,
+body,
+#root {
   width: 100%;
   height: 100%;
   overflow: hidden;
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
   color: var(--macos-text);
   background: #000;
   -webkit-font-smoothing: antialiased;
@@ -46,27 +48,37 @@ body {
   user-select: none;
 }
 
-
 .desktop-wallpaper {
   background: var(--active-wallpaper);
   position: relative;
 }
 
 .desktop-wallpaper::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse at 20% 50%, rgba(120, 80, 255, 0.15) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 20%, rgba(0, 120, 255, 0.1) 0%, transparent 50%),
-    radial-gradient(ellipse at 50% 80%, rgba(0, 200, 150, 0.08) 0%, transparent 50%);
+    radial-gradient(
+      ellipse at 20% 50%,
+      rgba(120, 80, 255, 0.15) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at 80% 20%,
+      rgba(0, 120, 255, 0.1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at 50% 80%,
+      rgba(0, 200, 150, 0.08) 0%,
+      transparent 50%
+    );
   pointer-events: none;
   z-index: 0;
 }
 
-
 .desktop-wallpaper::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   opacity: 0.03;
@@ -74,7 +86,6 @@ body {
   pointer-events: none;
   z-index: 0;
 }
-
 
 @layer utilities {
   .glass {
@@ -129,11 +140,29 @@ body {
   }
 
   .scrollbar-macos::-webkit-scrollbar {
-    width: 8px;
+    width: 0px;
+    height: 0px;
   }
 
   .scrollbar-macos::-webkit-scrollbar-track {
     background: transparent;
+  }
+
+  /* Hide all scrollbars */
+  ::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+    display: none;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+    display: none;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: transparent;
+    display: none;
   }
 
   .scrollbar-macos::-webkit-scrollbar-thumb {
@@ -145,7 +174,6 @@ body {
     background: rgba(255, 255, 255, 0.25);
   }
 }
-
 
 .traffic-btn {
   width: 12px;
@@ -162,14 +190,25 @@ body {
   opacity: 0.85;
 }
 
-.traffic-red   { background: var(--macos-red); }
-.traffic-yellow { background: var(--macos-yellow); }
-.traffic-green  { background: var(--macos-green); }
-
+.traffic-red {
+  background: var(--macos-red);
+}
+.traffic-yellow {
+  background: var(--macos-yellow);
+}
+.traffic-green {
+  background: var(--macos-green);
+}
 
 @keyframes bootFade {
-  from { opacity: 0; transform: scale(1.03); }
-  to   { opacity: 1; transform: scale(1); }
+  from {
+    opacity: 0;
+    transform: scale(1.03);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .boot-fade {
@@ -177,15 +216,21 @@ body {
 }
 
 @keyframes dockBounce {
-  0%, 100% { transform: translateY(0); }
-  30%       { transform: translateY(-14px); }
-  60%       { transform: translateY(-6px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-14px);
+  }
+  60% {
+    transform: translateY(-6px);
+  }
 }
 
 .dock-bounce {
   animation: dockBounce 0.5s ease;
 }
-
 
 ::selection {
   background: rgba(10, 132, 255, 0.35);

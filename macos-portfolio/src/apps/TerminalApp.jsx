@@ -138,7 +138,7 @@ const TerminalApp = () => {
 
   return (
     <div
-      className="w-full h-full bg-[#1c1c1e]/95 p-4 overflow-y-auto font-mono text-[13px] text-gray-200"
+      className="w-full h-full bg-[#1c1c1e]/95 p-4 font-mono text-[13px] text-gray-200"
       onClick={() => inputRef.current?.focus()}
     >
       <div className="space-y-1 whitespace-pre-wrap">

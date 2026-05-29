@@ -2,7 +2,7 @@ import React from "react";
 
 const AboutApp = () => {
   return (
-    <div className="w-full h-full p-8 overflow-y-auto scrollbar-macos">
+    <div className="w-full h-full p-8 scrollbar-macos">
       <div className="max-w-3xl mx-auto space-y-8">
         <div className="flex flex-col md:flex-row items-center md:items-start gap-8 bg-white/5 p-6 rounded-2xl border border-white/10">
           <img

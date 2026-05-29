@@ -218,7 +218,7 @@ export const clamp = (val, min, max) => {
                 <div className="text-[11px] uppercase px-5 py-3 font-medium tracking-wide">
                   Explorer
                 </div>
-                <div className="flex-1 overflow-y-auto">
+                <div className="flex-1">
                   <div className="flex items-center gap-1 px-2 py-1 cursor-pointer font-bold text-[12px] uppercase hover:bg-[#2a2d2e]">
                     <VscChevronDown className="text-[14px]" /> PORTFOLIO
                   </div>
@@ -376,7 +376,7 @@ export const clamp = (val, min, max) => {
                   />
                 </div>
               </div>
-              <div className="flex-1 p-4 font-mono text-[13px] text-[#cccccc] overflow-y-auto">
+              <div className="flex-1 p-4 font-mono text-[13px] text-[#cccccc]">
                 <div className="text-green-500 mb-1">
                   privotech@macbook portfolio %{" "}
                   <span className="text-white">npm run dev</span>
